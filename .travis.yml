@@ -14,5 +14,5 @@ deploy:
   local_dir: build
   on:
     branch: master
-  repo: xpros.github.io
+  repo: xpros/xpros.github.io
   target-branch: master
