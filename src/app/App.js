@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '.././logo.svg';
+/* import logo from '.././logo.svg'; */
 
 //Components
-import Countdown from '../countdown/countdown';
+/* import Countdown from '../countdown/countdown'; */
 
 import './App.css';
 import './xpros.css';
@@ -22,7 +22,7 @@ class App extends Component {
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> 
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#">{this.site.title}</a>
+          <a class="navbar-brand" href="/">{this.site.title}</a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
               {/*<li class="nav-item active">
