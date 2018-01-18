@@ -12,7 +12,7 @@ class Countdown extends Component {
   render() {
     return(
       <div>
-        <img className="countdown-img" src="https://cdn.pixabay.com/photo/2017/01/31/17/13/animal-2025662_960_720.png" alt="Dog House" />
+        <img className="countdown-img" src="" alt="Alt Image" />
         <p><span>Name:</span> {this.props.name} <span>Birthdate:</span> {this.props.birthdate}</p>
       </div>
     )
