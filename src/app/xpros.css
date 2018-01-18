@@ -4,7 +4,7 @@ body {
 }
 
 .xpros-jumbo {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("//dl.dropboxusercontent.com/s/tvfxnrwmiqwnexj/tetris_header.jpg?dl=0");
+  background: linear-gradient(rgba(41, 43, 44, 0.45), rgba(41, 43, 44, 0.45)), url("//dl.dropboxusercontent.com/s/tvfxnrwmiqwnexj/tetris_header.jpg?dl=0");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

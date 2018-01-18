@@ -38,6 +38,7 @@ class App extends Component {
           <h1 className="display-4"><span>Welcome to {this.site.title}</span></h1>
           <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
         </div>
+        <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
         <div className="container-fluid">
           <div className="row">
             <div className="col">
