@@ -1,8 +1,13 @@
+body {
+  background-color: #292b2c;
+  color: #fff;
+}
+
 .xpros-jumbo {
-  background-image: url("//dl.dropboxusercontent.com/s/tvfxnrwmiqwnexj/tetris_header.jpg?dl=0");
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("//dl.dropboxusercontent.com/s/tvfxnrwmiqwnexj/tetris_header.jpg?dl=0");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #292b2c;
+  background-size: cover;
 }
 
 .xpros-jumbo h1 span, .xpros-jumbo p span {
