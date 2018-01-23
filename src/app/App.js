@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 /* import logo from '.././logo.svg'; */
 
 //Components
-import Countdown from '../countdown/countdown';
+import Counter from '../counter/counter';
 
 import './App.css';
 import './xpros.css';
@@ -18,18 +18,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> 
+        <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> 
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="/">{this.site.title}</a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-              {/*<li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a className="navbar-brand" href="/">{this.site.title}</a>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav mr-auto mt-2 mt-md-0">
+              {/*<li className="nav-item active">
+                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
               </li>*/}
             </ul>
           </div>
@@ -42,10 +42,10 @@ class App extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col">
-              <Countdown name="Murphy Hassel" birthdate="03/04/2017" />
+              <Counter name="Murphy Hassel" startdate="03/04/2017" />
             </div>
             <div className="col">
-              <Countdown name="Henry Witters" birthdate="01/01/2017" />
+              <Counter name="Henry Witters" startdate="01/01/2017" />
             </div>
           </div>
         </div>
