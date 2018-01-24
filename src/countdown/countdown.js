@@ -13,8 +13,8 @@ class Countdown extends Component {
       display: "block",
       marginLeft: "auto",
       marginRight: "auto",
-      maxHeight: "20rem",
-      maxWidth: "20rem",
+      maxHeight: "100%",
+      maxWidth: "100%",
     };
     
     return(
