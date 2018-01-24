@@ -17,9 +17,9 @@ class App extends Component {
         title: document.domain
       },
       countdowns: [
-        {"_id": "0", "name": "Murphy Hassel", startdate: "03/04/2017", "imgURL": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
-        {"_id": "1", "name": "Henry Witters", startdate: "04/01/2011", "imgURL": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
-        {"_id": "2", "name": "Matthew Hassel", startdate: "04/01/2011", "imgURL": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
+        {"_id": "0", "name": "Murphy Hassel", startdate: "03/04/2017", "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
+        {"_id": "1", "name": "Henry Witters", startdate: "04/01/2011", "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
+        {"_id": "2", "name": "Matthew Hassel", startdate: "04/01/2011", "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"},
     ]};
         
     //Bind functions
@@ -40,7 +40,7 @@ class App extends Component {
   countdownList = () => {
     const list = this.state.countdowns.map((countdown) =>
       <div className="col-sm-4" key={countdown._id}>
-        <Countdown name={countdown.name} startdate={countdown.startdate} imgURL={countdown.imgUrl} />
+        <Countdown name={countdown.name} startdate={countdown.startdate} imgUrl={countdown.imgUrl} />
       </div>
     );
     return (list);
