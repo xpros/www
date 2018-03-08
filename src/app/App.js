@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title'
 /* import logo from '.././logo.svg'; */
 
 //Components
@@ -28,15 +29,6 @@ class App extends Component {
     
   }
   
-/*  loadData = () => {
-    var self = this;
-    http.getCountdowns().then(data => {
-      self.setState({countdowns: data})
-    }, err => {
-      
-    });
-  }*/
-  
   countdownList = () => {
     const list = this.state.countdowns.map((countdown) =>
       <div className="col-sm-4" key={countdown._id}>
@@ -49,6 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <DocumentTitle title={this.state.site.title}></DocumentTitle>
         <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> 
             <span className="navbar-toggler-icon"></span>
