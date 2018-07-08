@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import DocumentTitle from 'react-document-title'
 /* import logo from '.././logo.svg'; */
 
 //Components
+import About from '../about/about';
+import Hello from '../hello/hello';
+import Hostlist from '../hostlist/hostlist';
 import Counter from '../counter/counter';
 import Countdown from '../countdown/countdown';
 
@@ -40,51 +44,60 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
-        <DocumentTitle title={this.state.site.title}></DocumentTitle>
-        <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> 
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand" href="/">{this.state.site.title}</a>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav mr-auto mt-2 mt-md-0">
-              {/*<li className="nav-item active">
-                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
-              </li>*/}
-            </ul>
+      <Router>
+        <div className="App">
+          <DocumentTitle title={this.state.site.title}></DocumentTitle>
+          <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <a className="navbar-brand" href="/">{this.state.site.title}</a>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul className="navbar-nav mr-auto mt-2 mt-md-0">
+                <li className="nav-item-active"><Link className="nav-link" to="/about">about</Link></li>
+                <li className="nav-item-active"><Link className="nav-link" to="/hello">hello</Link></li>
+                {/*<li className="nav-item-active"><Link className="nav-link" to="/hostlist">hostlist</Link></li>*/}
+                {/*<li classNmae="nav-item-active">
+                      <a className="nav-link" herf="#">hostlist <span className="sr-only">(current)</span></a>
+                  </li>*/}
+              </ul>
+            </div>
+          </nav>
+          <div className="jumbotron jumbotron-fluid xpros-jumbo">
+            <h1 className="display-4"><span>Welcome to {this.state.site.title}</span></h1>
+            <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
           </div>
-        </nav>
-        <div className="jumbotron jumbotron-fluid xpros-jumbo">
-          <h1 className="display-4"><span>Welcome to {this.state.site.title}</span></h1>
-          <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col">
-              <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col">
+                <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="container-fluid xpros-app">
-          <div className="row">
-            <div className="col">
-              <Counter />
+          
+          {/* Routes will go here */}
+          <Route path="/about" component={About} />
+          <Route path="/hello" component={Hello} />
+          <Route path="/hostlist" component={Hostlist} />
+          
+          
+          {/*<div className="container-fluid xpros-app">
+            <div className="row">
+              <div className="col">
+                <Counter />
+              </div>
+              <div className="col">
+                <Counter />
+              </div>
             </div>
-            <div className="col">
-              <Counter />
+          </div>*/}
+          {/*<div className="container-fluid xpros-app">
+            <div className="row">
+              {this.countdownList()}
             </div>
-          </div>
+          </div>*/}
         </div>
-        <div className="container-fluid xpros-app">
-          <div className="row">
-            {this.countdownList()}
-          </div>
-        </div>
-      </div>
+      </Router>
     );
   }
 }
