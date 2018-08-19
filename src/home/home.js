@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class About extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     console.log("props: %o", this.props);
@@ -12,15 +12,18 @@ class About extends Component {
       }
     }
   }
-  render() {
-    return (
+  render() {    
+    return(
       <div>
         <div className="jumbotron jumbotron-fluid xpros-jumbo">
-          <h1 className="display-4"><span>About Me</span></h1>
+          <h1 className="display-4"><span>Welcome to {this.state.site.title}.</span></h1>
         </div>
         <div className="container-fluid">
           <div className="row">
             <div className="col">
+                        <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
+
+              <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
             </div>
           </div>
         </div>
@@ -28,4 +31,5 @@ class About extends Component {
     );
   }
 }
-export default About;
+
+export default Home;
