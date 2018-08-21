@@ -21,8 +21,7 @@ class Home extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col">
-                        <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
-
+              <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
               <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
             </div>
           </div>

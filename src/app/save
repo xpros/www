@@ -1,0 +1,60 @@
+  {/*<Router>
+        <div className="App">
+          <DocumentTitle title={this.state.site.title}></DocumentTitle>
+          */}
+          {/* Routes will go here */}
+      {/*<Switch>
+            <Route exact={true} path="/" render={(props) => (<Home {...props} title='faketitle' />)} />
+            <Route path="/about" component={About} />
+            <Route path="/hello" component={Hello} />
+            <Route path="/hello/goodmorning" render={() => { return (<h1>Goodmorning</h1>) }} />
+            <Route path="/hostlist" component={Hostlist} />
+          </Switch>
+        </div>
+        <div className="App">
+          <DocumentTitle title={this.state.site.title}></DocumentTitle>
+          <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <a className="navbar-brand" href="/">{this.state.site.title}</a>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul className="navbar-nav mr-auto mt-2 mt-md-0">
+                <li className="nav-item-active"><Link className="nav-link" to="/about">about</Link></li>
+                <li className="nav-item-active"><Link className="nav-link" to="/hello">hello</Link></li>
+                {/*<li className="nav-item-active"><Link className="nav-link" to="/hostlist">hostlist</Link></li>*/}
+                {/*<li classNmae="nav-item-active">
+                      <a className="nav-link" herf="#">hostlist <span className="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+          */}
+          {/*<div className="jumbotron jumbotron-fluid xpros-jumbo">
+            <h1 className="display-4"><span>Welcome to {this.state.site.title}</span></h1>
+            <p className="lead"><span>Where geekin' it up is good for the soul.</span></p>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col">
+                <p>This is a work in progress as I have some fun and frustrations with web development (using React).</p>
+              </div>
+            </div>
+          </div>*/}      
+          {/*<div className="container-fluid xpros-app">
+            <div className="row">
+              <div className="col">
+                <Counter />
+              </div>
+              <div className="col">
+                <Counter />
+              </div>
+            </div>
+          </div>*/}
+          {/*<div className="container-fluid xpros-app">
+            <div className="row">
+              {this.countdownList()}
+            </div>
+          </div>
+      </Router>
+      */}
