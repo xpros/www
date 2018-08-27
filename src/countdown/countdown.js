@@ -16,25 +16,25 @@ class Countdown extends Component {
           "name": "Murphy Hassel",
           "startdate": 1301616000,
           "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"
+        },
+        {
+          "_id": 1,
+          "name": "Henry Witters",
+          "startdate": 1301616000,
+          "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"
+        },
+        {
+          "_id": 2,
+          "name": "Matthew Hassel",
+          "startdate": 1301616000,
+          "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"
         }
-//        },
-//        {
-//          "_id": 1,
-//          "name": "Henry Witters",
-//          "startdate": 1301616000,
-//          "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"
-//        },
-//        {
-//          "_id": 2,
-//          "name": "Matthew Hassel",
-//          "startdate": 1301616000,
-//          "imgUrl": "//dl.dropboxusercontent.com/s/6ecveubyh1h6qyh/doghouse.png?dl=0"
-//        }
       ]
     };
     
     //Bind functions
-    this.countdownListItems = this.countdownListItems.bind(this);
+    this.featuredCountdown = this.featuredCountdown.bind(this);
+    this.getNearestCountdown = this.getNearestCountdown.bind(this);
     this.epochToLocalDateString = this.epochToLocalDateString.bind(this);
   }
   
@@ -47,40 +47,28 @@ class Countdown extends Component {
     return (epoch.toLocaleDateString());
   }
   
-  countdownListItems = () => {
-    const list = this.state.countdowns.map((countdown) =>
-      <div className="col-sm-8" key={countdown._id}>
-        <CountdownItem name={countdown.name} startdate={this.epochToLocalDateString(countdown.startdate)} imgUrl={countdown.imgUrl} />
-      </div>
+  featuredCountdown = (countdown) => {
+    return(
+      <CountdownItem key={countdown._id} name={countdown.name} startdate={this.epochToLocalDateString(countdown.startdate)} imgUrl={countdown.imgUrl} />
     );
-    return (list);
   }
-  
-  // Crudly search through countdowns list and return the nearest event
-  getNearestEvent = (list) => {
     
+  // Crudly search through countdowns list and return the nearest event
+  getNearestCountdown = (countdowns) => {
+    return(
+      countdowns[0]
+    );    
   }
   
   render() {
-    
-    var imgStyle = {
-      display: "block",
-      marginLeft: "auto",
-      marginRight: "auto",
-      maxHeight: "100%",
-      maxWidth: "100%",
-    };
-    
     return(
       <div className="container-fluid xpros-app">
         <div className="row">
           <div className="col-sm-8">
-            <div className="row">
-              {this.countdownListItems()}
-            </div>
+            {this.featuredCountdown(this.getNearestCountdown(this.state.countdowns))}
           </div>
           <div className="col-sm-4">
-            <CountdownList />
+            <CountdownList {...this.props} {...this.state} />
           </div>
         </div>
       </div>
