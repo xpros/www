@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import DocumentTitle from 'react-document-title'
 
 //Components
@@ -58,15 +58,16 @@ class App extends Component {
       <Router>
         <div className="App">
           <DocumentTitle title={this.state.site.title}></DocumentTitle>
-          <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <a className="navbar-brand" href="/">{this.state.site.title}</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
-            <a className="navbar-brand" href="/">{this.state.site.title}</a>
             <div className="collapse navbar-collapse" id="navbarToggler">
-              <ul className="navbar-nav mr-auto mt-2 mt-md-0">
-                <li className="nav-item-active"><Link className="nav-link" to="/about">about</Link></li>
-                <li className="nav-item-active"><Link className="nav-link" to="/hello">hello</Link></li>
+              <ul className="navbar-nav">
+                <li className="nav-item"><NavLink className="nav-link" to="/about">about</NavLink></li>
+                <li className="nav-item"><NavLink className="nav-link" to="/hello">hello</NavLink></li>
+                <li className="nav-item"><NavLink className="nav-link disabled" to="/countdown">countdown</NavLink></li>
               </ul>
             </div>
           </nav>
