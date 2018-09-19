@@ -11,12 +11,14 @@ function CountdownItem(props) {
   };
   
   return(
-    <div className="card card-outline-secondary mb-3 text-center">
-      <img className="card-img-top" alt="Countdown" src={props.imgUrl} style={imgStyle}/>
-      <div className="card-block">
-        <h4 className="card-title">{props.name}</h4>
-        <p className="card-text">Startdate: {props.startdate}</p>
+    <div className="card text-center text-white bg-dark">
+      <img className="card-img-top" alt="Countdown" src={props.imgUrl} style={imgStyle} />
+      <div className="card-header">Featured</div>
+      <div className="card-body">
+        <h5 className="card-title">{props.name}</h5>
+        <p className="card-text">Startdat: {props.startdate}</p>
       </div>
+      <div className="card-footer text-muted">2 days ago</div>
     </div>
   );
 }

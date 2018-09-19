@@ -11,20 +11,25 @@ class CountdownList extends Component {
     
     //Bind functions
     this.countdownListItems = this.countdownListItems.bind(this);
+    this.onButtonClicked = this.onButtonClicked.bind(this);
   }
   
-  countdownListItems = () => {
-    const list = this.props.countdowns.map((countdown) => 
-      <div className="list-group-item list-group-item-action list-group-item-dark">
+  onButtonClicked = () => {
+    console.log("Hello World");
+  }
+  
+  countdownListItems = () => {    
+    const list = this.props.countdowns.map((countdown) =>
+      <li key={countdown._id} className="list-group-item list-group-item-action list-group-item-dark" onClick={() => this.onButtonClicked()} >
         {countdown.name}
-      </div>
+      </li>
     );
     return (list);
   }
   
   render() {
     return(
-      <div className="card card-outline-secondary mb-3 text-center">
+      <div className="card text-white bg-dark card-outline-secondary mb-3 text-center">
         <div className="card-header">
           Countdowns
         </div>

@@ -34,6 +34,7 @@ class Countdown extends Component {
     
     //Bind functions
     this.featuredCountdown = this.featuredCountdown.bind(this);
+    this.getRandomCountdown = this.getRandomCountdown.bind(this);
     this.getNearestCountdown = this.getNearestCountdown.bind(this);
     this.epochToLocalDateString = this.epochToLocalDateString.bind(this);
   }
@@ -52,6 +53,14 @@ class Countdown extends Component {
       <CountdownItem key={countdown._id} name={countdown.name} startdate={this.epochToLocalDateString(countdown.startdate)} imgUrl={countdown.imgUrl} />
     );
   }
+  
+  getRandomCountdown = (countdowns) => {
+    console.log("typeof countdowns: " + typeof countdowns);
+    console.log("constructor countdowns: " + countdowns.constructor)
+    return(
+      countdowns[Math.floor(Math.random()*countdowns.length)]
+    );
+  }
     
   // Crudly search through countdowns list and return the nearest event
   getNearestCountdown = (countdowns) => {
@@ -65,7 +74,7 @@ class Countdown extends Component {
       <div className="container-fluid xpros-app">
         <div className="row">
           <div className="col-sm-8">
-            {this.featuredCountdown(this.getNearestCountdown(this.state.countdowns))}
+            {this.featuredCountdown(this.getRandomCountdown(this.state.countdowns))}
           </div>
           <div className="col-sm-4">
             <CountdownList {...this.props} {...this.state} />
