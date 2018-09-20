@@ -16,6 +16,9 @@ import './xpros.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log("Component Name: %o", this.constructor.name);
+    console.log("props: %o", this.props);
+    console.log("state: %o", this.state);
     
     this.state = {
       site: {
@@ -42,6 +45,12 @@ class App extends Component {
           {
             "_id": "3",
             "path": "/countdown",
+            "exact": false,
+            "component": Countdown
+          },
+          {
+            "_id": "4",
+            "path": "/countdown/c/:countdownId",
             "exact": false,
             "component": Countdown
           }
@@ -75,7 +84,7 @@ class App extends Component {
             {this.state.site.routes.map(({path, exact, component: C}, index) => (
               <Route key={index}
                 path={path}
-                render={(props) => <C {...this.props} />}
+                render={(props) => <C {...props} />}
                 exact={exact}
               />
             ))}

@@ -16,9 +16,9 @@ function CountdownItem(props) {
       <div className="card-header">Featured</div>
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">Startdat: {props.startdate}</p>
+        <p className="card-text">Startdate: {props.startdate}</p>
       </div>
-      <div className="card-footer text-muted">2 days ago</div>
+      {/*<div className="card-footer text-muted"></div>*/}
     </div>
   );
 }

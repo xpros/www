@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, Switch } from 'react-router-dom';
 import CountdownItem from './countdownitem';
 import CountdownList from './countdownlist';
 import './countdown.css';
@@ -6,6 +7,7 @@ import './countdown.css';
 class Countdown extends Component {
   constructor(props) {
     super(props);
+    console.log("Component Name: %o", this.constructor.name);
     console.log("props: %o", this.props);
     console.log("state: %o", this.state);
     
@@ -55,8 +57,6 @@ class Countdown extends Component {
   }
   
   getRandomCountdown = (countdowns) => {
-    console.log("typeof countdowns: " + typeof countdowns);
-    console.log("constructor countdowns: " + countdowns.constructor)
     return(
       countdowns[Math.floor(Math.random()*countdowns.length)]
     );
@@ -74,7 +74,15 @@ class Countdown extends Component {
       <div className="container-fluid xpros-app">
         <div className="row">
           <div className="col-sm-8">
-            {this.featuredCountdown(this.getRandomCountdown(this.state.countdowns))}
+            <Switch>
+              <Route exact={true} path='/countdown'>{this.featuredCountdown(this.getRandomCountdown(this.state.countdowns))}</Route>
+              <Route path='/countdown/c/:id' render={({ match }) => (
+                  <div>
+                    {this.featuredCountdown(this.state.countdowns[match.params.id])}
+                  </div>                  
+                )}  />
+            </Switch>
+            {/* this.featuredCountdown(this.getRandomCountdown(this.state.countdowns)) */}
           </div>
           <div className="col-sm-4">
             <CountdownList {...this.props} {...this.state} />

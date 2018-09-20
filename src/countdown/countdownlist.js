@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './countdown.css'
 
 class CountdownList extends Component {
@@ -20,9 +21,11 @@ class CountdownList extends Component {
   
   countdownListItems = () => {    
     const list = this.props.countdowns.map((countdown) =>
-      <li key={countdown._id} className="list-group-item list-group-item-action list-group-item-dark" onClick={() => this.onButtonClicked()} >
-        {countdown.name}
-      </li>
+      <Link key={countdown._id} to={`${this.props.match.url}/c/${countdown._id}`}>
+        <li className="list-group-item list-group-item-action list-group-item-dark" onClick={() => this.onButtonClicked()} >
+          {countdown.name}
+        </li>
+      </Link>
     );
     return (list);
   }
