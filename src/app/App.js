@@ -65,7 +65,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App ">
+        <div className="App">
           <DocumentTitle title={this.state.site.title}></DocumentTitle>
           <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <a className="navbar-brand" href="/">{this.state.site.title}</a>

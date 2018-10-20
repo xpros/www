@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
-import CountdownItem from './countdownitem';
-import CountdownList from './countdownlist';
+import CountdownItem from './components/countdownitem';
+import CountdownList from './components/countdownlist';
 import './countdown.css';
 
 class Countdown extends Component {
@@ -39,6 +39,7 @@ class Countdown extends Component {
     this.getRandomCountdown = this.getRandomCountdown.bind(this);
     this.getNearestCountdown = this.getNearestCountdown.bind(this);
     this.epochToLocalDateString = this.epochToLocalDateString.bind(this);
+    this.getNextCountdown = this.getNextCountdown.bind(this);
   }
   
   // INPUT: UTC Seconds ; OUTPUT: Local date string adjusted with timezone offset
@@ -50,9 +51,28 @@ class Countdown extends Component {
     return (epoch.toLocaleDateString());
   }
   
+  getNextCountdown = (epoch) => {
+    // Calculate and return the next event from the starting epoch
+    // If the event is in the past from now, add a year
+    // return the epoch
+    var pastEpoch = new Date(epoch);
+    var nowEpoch = new Date();
+    
+    console.log(pastEpoch);
+    console.log(nowEpoch);
+    return(
+      <div>Hello World from getNextCountdown</div>
+    );
+  }
+  
   featuredCountdown = (countdown) => {
     return(
-      <CountdownItem key={countdown._id} name={countdown.name} startdate={this.epochToLocalDateString(countdown.startdate)} imgUrl={countdown.imgUrl} />
+      <CountdownItem 
+        key={countdown._id} 
+        name={countdown.name}
+        startdate={this.epochToLocalDateString(countdown.startdate)}
+        nextCountdown={this.getNextCountdown(this.epochToLocalDateString(countdown.startdate))}
+        imgUrl={countdown.imgUrl} />
     );
   }
   
@@ -82,7 +102,6 @@ class Countdown extends Component {
                   </div>                  
                 )}  />
             </Switch>
-            {/* this.featuredCountdown(this.getRandomCountdown(this.state.countdowns)) */}
           </div>
           <div className="col-sm-4">
             <CountdownList {...this.props} {...this.state} />

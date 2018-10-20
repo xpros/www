@@ -1,5 +1,5 @@
 import React from 'react';
-import './countdown.css'
+import '../countdown.css'
 
 function CountdownItem(props) {
   var imgStyle = {
@@ -18,7 +18,7 @@ function CountdownItem(props) {
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">Startdate: {props.startdate}</p>
       </div>
-      {/*<div className="card-footer text-muted"></div>*/}
+      {<div className="card-footer text-muted">{props.nextCountdown}</div>}
     </div>
   );
 }

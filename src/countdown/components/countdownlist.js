@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import './countdown.css'
+import '../countdown.css'
 
 class CountdownList extends Component {
   constructor(props) {
     super(props);
+    console.log("Component Name: %o", this.constructor.name);
     console.log("props: %o", this.props);
     console.log("state: %o", this.state);
     
